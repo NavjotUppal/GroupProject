@@ -10,7 +10,7 @@ namespace GroupProject
     {
         static void Main(string[] args)
         {
-            
+            // Add a change.
             int[] array = new int[24];
             int arrayLength = array.Length;
 
