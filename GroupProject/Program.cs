@@ -52,8 +52,43 @@ namespace GroupProject
             {
                 Console.Write(num.ToString() + " ");
             }
+            
+            
+            int item;
+           // n = array.Length;
+            bool flag = false;
+            Console.WriteLine("\nEnter item to be searched: ");
+            Int32.TryParse(Console.ReadLine(), out item); // Taking input from user
+            int lowerBound = 0;
+            int upperBound = arrayLength- 1;
+            while (!flag) // loop will execute when flag is false
+            {
+                if (upperBound < lowerBound)
+                {
+                    Console.WriteLine("Exit if");
+                    flag = true;
+                }
+                int midPoint = (upperBound + lowerBound) / 2; // calculating mid point for the comparison
+                //if the number at mid pointg in array is less than x, the search will occur on left part
+                if (array[midPoint] < item)
+                {
+                    lowerBound = midPoint + 1;
 
+                }
+                // if the number at mid point in array is greater than x, the search will occur on right side                
+                else if (array[midPoint] > item)
+                {
+                    upperBound = midPoint - 1;
+                }
+                else if (array[midPoint] == item)
+                {
+                    Console.WriteLine("hello, the element is at " + (midPoint + 1) + " position");
+                    flag = true;
+                }
+            }
             Console.ReadLine();
+
         }
+
     }
 }
